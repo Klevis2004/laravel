@@ -1,0 +1,39 @@
+.bg-black {
+    background-color: #000 !important;
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.carousel-item {
+    filter: brightness(50%);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.carousel-inner h5,
+p {
+    color: rgb(255, 255, 255);
+}
+
+.carousel-inner h5 {
+    font-size: 90px;
+}
+
+.carousel-inner p {
+    font-size: 30px;
+}
+
+.carousel-inner button {
+    width: 200px;
+    height: 50px;
+}
+
