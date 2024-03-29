@@ -13,11 +13,19 @@ return new class extends Migration
     {
         Schema::create('librat_posts', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-
             $table->string('name');
             $table->string('author');
             $table->string('photo');
+            $table->foreignId('category_id')
+                ->nullable()
+                ->references('id')->on('categories')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->integer('sasia');
+            $table->timestamps();
+            $table->text('summary');
+            $table->integer('price');
+            $table->integer('rent_price');
         });
     }
 

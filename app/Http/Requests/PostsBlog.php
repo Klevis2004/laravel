@@ -24,7 +24,12 @@ class PostsBlog extends FormRequest
         return [
             'name' => 'required|min:5|max:50',
             'author' => 'required|min:5',
-            'photo' => 'required'
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required',
+            'price' =>'required',
+            'rent_price' => 'required',
+            'sasia' =>'required',
+            'summary' => 'required',
         ];
     }
 }

@@ -537,13 +537,13 @@ li.list_desc h4 a:hover{
 }
 .nbs-flexisel-nav-left {
 	left: 30px;
-	background: url(../images/1.png) no-repeat -0px 80px;
-	background-size: 30px;
+	/* background: url(../images/1.png) no-repeat -0px 80px;
+	background-size: 30px; */
 }
 .nbs-flexisel-nav-right {
 	right: 30px;
-	background: url(../images/2.png) no-repeat -0px 80px;
-	background-size: 30px;
+	/* background: url(../images/2.png) no-repeat -0px 80px;
+	background-size: 30px; */
 }
 .content-bottom{
 	width:100%;

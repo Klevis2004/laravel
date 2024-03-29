@@ -10,7 +10,14 @@
         <div class="carousel-item active" data-bs-interval="10000">
             <img src="{{ asset('assets/images/1326370.png') }}" class="d-block w-100" alt="Slide 3">
             <div class="carousel-caption d-none d-md-block">
-                <h5>WELCOME READER</h5>
+                <h5>WELCOME
+                    @if (Auth::check())
+                        {{ Auth::user()->name }}
+                        {{ Auth::user()->surname }}
+                    @else
+                        Reader
+                    @endif
+                </h5>
                 <p>“A room without books is like a body without a soul.”</p>
                 <button type="button" class="btn btn-outline-light">Send me there</button>
             </div>
@@ -105,7 +112,7 @@
                     @if ($loop->index < 10)
                         <li>
                             <a href="{{ url('book/' . $post->id) }}">
-                                <img src="{{ asset('images/' . $post->photo) }}" alt="product-item"
+                                <img src="{{ asset('storage/' . $post->photo) }}" alt="product-item"
                                     class="img-fluid" style="height: 300px;">
                             </a>
                         </li>
@@ -122,7 +129,7 @@
                 visibleItems: 5,
                 animationSpeed: 1000,
                 autoPlay: true,
-                autoPlaySpeed: 3000,
+                autoPlaySpeed: 1500,
                 pauseOnHover: true,
                 enableResponsiveBreakpoints: true,
                 responsiveBreakpoints: {
@@ -147,9 +154,7 @@
 </div>
 </div>
 
-
-</div>
-<a href="#" id="scrollToTop" class="btn btn-primary"><i class="bi bi-arrow-up"></i></a>
+<a href="#" id="scrollToTop" class="btn btn-primary"><i class="bi bi-arrow-up">Go Top</i></a>
 <script>
     var scrollToTopButton = document.getElementById("scrollToTop");
 
@@ -170,8 +175,7 @@
 </script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<script type="text/javascript" src="{{ asset('assets/js/jquery.flexisel.js') }}"></script>
 </body>
 
 </html>
